@@ -1,0 +1,17 @@
+<!-- <h2>Beers</h2> -->
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Temperature</th>
+      <!-- <th>Status</th> // To revert and show the status column -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let beer of beers">
+      <td class="beer-name">{{ beer.name }}</td>
+      <td class="beer-temperature" [ngClass]="checkTemp(beer)">{{ beer.temperature }}°</td>
+      <!-- <td class="temperature-status"  >{{ checkTemp(beer) }}</td> // To revert and show the status column -->
+    </tr>
+  </tbody>
+</table>
