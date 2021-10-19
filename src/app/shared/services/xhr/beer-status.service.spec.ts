@@ -1,8 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import { BeerStatusComponent } from 'src/app/modules/beer-status/beer-status.component';
-import { BeerName, BeerProps, BeerTemperature } from 'src/app/modules/beer-status/beer-status.types';
+import { Beer, BeerName } from 'src/app/modules/beer-status/beer-status.types';
 import { BeerModel } from '../../model/beer.model';
 
 import { BeerStatusService } from './beer-status.service';
@@ -37,11 +37,11 @@ describe('XhrService', () => {
   });
 
   it('should return beer temperature from getTemperatures()', (done: DoneFn) => {
-    const spy = spyOn(service, 'getTemperatures').and.returnValue(of(apiMocks.RES_BEER_TEMPERATURES as BeerTemperature[]))
+    const spy = spyOn(service, 'getTemperatures').and.returnValue(of(apiMocks.BEERS as Beer[]))
 
-    service.getTemperatures(1).subscribe(
+    service.getTemperatures().subscribe(
       (beer) => {
-        expect(beer).toBe(apiMocks.RES_BEER_TEMPERATURES)
+        expect(beer).toBe(apiMocks.BEERS)
         done()
       },
       done.fail
