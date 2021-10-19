@@ -18,7 +18,6 @@ Beer status front end for Sensortech and local brewerey. MVP for Annual Craft Be
 - Light components controllers
 
 #### Future suggestions
-- Change to only 1 request with all beer temp data
 - Improve modeling
 - Client branding styles 
 - Comprehensive use of Observable instead of a settimeout
@@ -27,8 +26,6 @@ Beer status front end for Sensortech and local brewerey. MVP for Annual Craft Be
 - Use of google analytics 
 - Add possibilities to add more beers on the interface
 - Add e2e tests
-
-
 
 #### Approach
 We have good oportunities in the backend, but a Annual Craft Beer Festival is approching and we short time we had, to objective is to improve the user experience.

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Beer, BeerName, Xhr } from 'src/app/modules/beer-status/beer-status.types';
 import { BeerModel } from '../../model/beer.model';
 
@@ -16,13 +17,14 @@ export class BeerStatusService {
     new BeerModel(BeerName.PALE_ALE, 4, 6)
   ]
 
-  getTemperatures(beerID: number) {
-    return this.http.get(Xhr.URL_TEMPERATURE_API + beerID)
+  getTemperatures(): Observable<Beer[]> {
+    return this.http.post<Beer[]>(Xhr.URL_TEMPERATURE_API, this._beers)
   }
 
   getBeers(): Beer[] {
     return this._beers
   }
+
   constructor(private http: HttpClient) {
 
   }
