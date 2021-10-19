@@ -19,14 +19,8 @@ export class BeerStatusComponent implements OnInit {
     this.refreshTemperature(5000);
   }
 
-  reqTemperatures() {
-    this.beers.forEach((beer) => {
-      this.beerStatusService.getTemperatures(beer.id)
-        .subscribe((beerTemperature) => {
-
-          this.beers[beerTemperature['id']] = { ...beer, ...beerTemperature }
-        })
-    })
+  reqTemperatures(): void {
+      this.beerStatusService.getTemperatures().subscribe(data => this.beers = data)
   }
 
   refreshTemperature(miliSecs: number) {

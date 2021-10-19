@@ -84,32 +84,25 @@ describe('BeerStatusComponent', () => {
     expect(onInit).toHaveBeenCalled()
   })
 
-  it('should define BEERS ARRAY with temperatures based on id', fakeAsync(() => {
+  it('should return BEERS ARRAY with same lenght after reqTemperatures()', fakeAsync(() => {
     const beers: Beer[] = component.beers
-    
-    spyOn(service, 'getTemperatures').and.returnValue(of(apiMocks.RES_BEER_TEMPERATURES[0]))
+    spyOn(service, 'getTemperatures').and.returnValue(of(apiMocks.BEERS))
     
     component.reqTemperatures();
     tick()
     fixture.detectChanges()
 
-    expect(component.beers).toEqual(beers)
+    expect(component.beers.length).toEqual(beers.length)
   }))
 
   it('should update the beer temperatures every 5 secs', fakeAsync(() => {
-    let beers = apiMocks.BEERS
-    spyOn(service, 'getTemperatures').and.callFake(() => {
-      return of(apiMocks.RES_BEER_TEMPERATURES[0])
-    })
+    spyOn(service, 'getTemperatures').and.callFake(() => of(apiMocks.BEERS))
     spyOn(component, 'refreshTemperature').and.callThrough()
 
-    component.reqTemperatures()
     component.refreshTemperature(5000)
-    tick(25000)
-    fixture.detectChanges()
+    tick(5000)
     discardPeriodicTasks()
     
-    expect(beers).not.toBe(component.beers)
     expect(component.refreshTemperature).toHaveBeenCalled()
 
   }))

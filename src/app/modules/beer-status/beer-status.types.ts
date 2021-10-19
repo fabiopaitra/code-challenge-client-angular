@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs'
-
 export enum Xhr {
   URL_TEMPERATURE_API = 'http://localhost:8081/temperature/'
 }
