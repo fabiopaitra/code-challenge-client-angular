@@ -11,7 +11,7 @@ Beer status front end for Sensortech and local brewerey. MVP for Annual Craft Be
 <img width="1488" alt="image" src="https://user-images.githubusercontent.com/9400359/160778680-d319d723-2093-4b39-9cf8-3ac197585391.png">
 
 ### Important:
-It's necessary to add the `.env.local` file with the variable:
+It's necessary to add the `.env.local` file, in the root folder, next to the README.md, adding the variable:
 - `REACT_APP_API_KEY=`
 
 
