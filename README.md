@@ -1,6 +1,6 @@
 ### Available scripts:
 
-- `npm start` - Start the application (Port 4200)
+- `npm start` - Start the application (`localhost:3000`)
 - `npm test` - Runs available tests
 - `npm test:coverage` - Runs available tests and check coverage
 
