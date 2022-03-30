@@ -2,7 +2,6 @@
 
 - `npm start` - Start the application (`localhost:3000`)
 - `npm test` - Runs available tests
-- `npm test:coverage` - Runs available tests and check coverage
 
 ### Details:
 <img width="1488" alt="image" src="https://user-images.githubusercontent.com/9400359/160778680-d319d723-2093-4b39-9cf8-3ac197585391.png">
