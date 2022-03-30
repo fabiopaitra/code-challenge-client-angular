@@ -27,7 +27,7 @@ It's necessary to add the `.env.local` file, in the root folder, next to the REA
 
 
 ### Code coverage
-<img width="746" alt="image" src="https://user-images.githubusercontent.com/9400359/160779888-671de4e5-8a58-47fa-a347-cd43ef1ea78f.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/9400359/160779888-671de4e5-8a58-47fa-a347-cd43ef1ea78f.png">
 
 
 
